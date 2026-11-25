@@ -1,4 +1,4 @@
-name: MissionCriticalGrid preliminary load flow
+name: MissionCriticalGrid preliminary load flow and contingencies
 on:
   pull_request:
     paths:
@@ -20,9 +20,12 @@ jobs:
       - run: python -m pip freeze > campus-environment.txt
       - run: python -m unittest discover -s work-samples/mission-critical-grid -v
       - run: python work-samples/mission-critical-grid/run_balanced.py
+      - run: python work-samples/mission-critical-grid/contingencies.py
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: campus-preliminary
           path: |
             campus-preliminary-results.json
+            contingency-results.json
             campus-environment.txt
