@@ -1,6 +1,6 @@
 # M0/W0 — Analytical references and native solver qualification
 
-Status: analytical reference calculations and three local unit tests passed in Python 3.13.5. Native pandapower execution pending: package installer returned no available distribution in the assistant runtime, despite version 3.5.6 being listed on PyPI. CI recipe is provided; actual workflow status is separate.
+Status: analytical reference calculations and three local unit tests passed in Python 3.13.5. Native pandapower 3.5.6 execution passed on GitHub Actions (Python 3.12.16); local installer remains unavailable. See [native evidence](NATIVE_EVIDENCE.md).
 
 ## Two-bus case
 20 kV, 50 Hz, balanced constant-PQ load 2 MW + j0.8 Mvar; 1 km line R=0.5 ohm, X=1.2 ohm, no shunt. Load flow slack 1 pu and 0 degrees; source impedance applies only to fault analysis. For three-phase faults use source strength 500/250 MVA (max/min), R/X=0.1, c=1.1/1.0, line temperature 20 C, zero fault impedance and no pre-fault-voltage method.
