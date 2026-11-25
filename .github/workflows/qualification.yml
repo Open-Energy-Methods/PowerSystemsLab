@@ -1,0 +1,30 @@
+name: M0 solver qualification
+on:
+  pull_request:
+    paths:
+      - 'benchmarks/m0/**'
+      - 'modules/F01-ac-circuits/**'
+      - '.github/workflows/qualification.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r benchmarks/m0/requirements.txt
+      - run: python -m pip freeze > qualification-environment.txt
+      - run: python -m unittest discover -s benchmarks/m0 -v
+      - run: python -m unittest discover -s modules/F01-ac-circuits -v
+      - run: python benchmarks/m0/qualify.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m0-qualification
+          path: |
+            qualification-results.json
+            qualification-environment.txt

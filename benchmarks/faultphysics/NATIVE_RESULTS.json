@@ -1,0 +1,63 @@
+{
+  "source_run": 45723843118,
+  "source_job": 139588553148,
+  "tested_commit": "8040f7a03664db3e454f5e41dbfdcd41afbaa14c",
+  "classification": "synthetic benchmark, not campus equipment duty",
+  "fault_cases": [
+    {
+      "case": "max",
+      "fault": "3ph",
+      "native_ka": 5.888071061601967,
+      "reference_ka": 5.888071061601967,
+      "relative_error": 0,
+      "pass": true
+    },
+    {
+      "case": "max",
+      "fault": "2ph",
+      "native_ka": 5.099219118635312,
+      "reference_ka": 5.099219118635312,
+      "relative_error": 0,
+      "pass": true
+    },
+    {
+      "case": "max",
+      "fault": "1ph",
+      "native_ka": 3.8210145976348238,
+      "reference_ka": 3.821014597634823,
+      "relative_error": 2.3244570179080196e-16,
+      "pass": true
+    },
+    {
+      "case": "min",
+      "fault": "3ph",
+      "native_ka": 4.0249966728095785,
+      "reference_ka": 4.0249966728095785,
+      "relative_error": 0,
+      "pass": true
+    },
+    {
+      "case": "min",
+      "fault": "2ph",
+      "native_ka": 3.4857493688009376,
+      "reference_ka": 3.4857493688009367,
+      "relative_error": 2.5480271979670465e-16,
+      "pass": true
+    }
+  ],
+  "ideal_parallel_source_screen": {
+    "open_ka": 5.888071061601967,
+    "closed_ka": 11.776142123203934
+  },
+  "relay": {
+    "constant_initial_8pu_s": 0.49797561076514024,
+    "decay_dt_1ms": {
+      "trip_s": null,
+      "peak_progress": 0.20231272808356357
+    },
+    "decay_dt_0.1ms": {
+      "trip_s": null,
+      "peak_progress": 0.20231342353044873
+    }
+  }
+}
