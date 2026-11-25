@@ -5,10 +5,10 @@
 | Preliminary nameplate arithmetic | screening.py, PRELIMINARY_SCREEN.md | local analytical checks passed; review pending |
 | Network solver qualification | W0 | not started |
 | Equipment selection | W1 | not qualified |
-| Solved AC load flow | W2 | not available |
-| Contingencies | W3 | not available |
-| IEC 60909 faults | W4 | not available |
-| Selectivity and protection | W5 | not available |
+| Solved AC load flow | W2_NATIVE_EVIDENCE.md | native smoke tests passed; design review open |
+| Contingencies | W3_NATIVE_EVIDENCE.md | 41 outages, 124 states passed capacity screen; no service continuity claim |
+| IEC 60909 faults | shared faultphysics benchmark (PR #2) | campus blocked; native benchmark qualification pending |
+| Selectivity and protection | shared relay benchmark (PR #2) | generic numerical benchmark only; campus settings unqualified |
 | Resilience | W6 | not available |
 | Design alternatives | W7 | not available |
 | PowerFactory cross-check | W8 | not available; licence pending |
