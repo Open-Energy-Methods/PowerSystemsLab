@@ -1,0 +1,51 @@
+{
+  "frequency_hz": 50,
+  "base_mva": 100,
+  "blocks": 16,
+  "it_mw_per_block": 1.5,
+  "ups_efficiency": 0.97,
+  "ups_pf": 0.99,
+  "cooling_mw_per_block": 0.34,
+  "cooling_pf": 0.9,
+  "aux_mw_per_block": 0.05,
+  "aux_pf": 0.95,
+  "recharge_mw_per_block": 0.1,
+  "grid": {
+    "kv": 110,
+    "vm_pu": 1,
+    "sc_max_mva": 3000,
+    "sc_min_mva": 1500,
+    "rx": 0.1
+  },
+  "hv_transformer": {
+    "mva": 40,
+    "hv_kv": 110,
+    "lv_kv": 20,
+    "vk_percent": 12,
+    "vkr_percent": 0.5,
+    "pfe_kw": 0,
+    "i0_percent": 0,
+    "shift_degree": 0
+  },
+  "lv_transformer": {
+    "mva": 2.5,
+    "hv_kv": 20,
+    "lv_kv": 0.4,
+    "vk_percent": 6,
+    "vkr_percent": 1,
+    "pfe_kw": 0,
+    "i0_percent": 0,
+    "shift_degree": 0
+  },
+  "mv_feeder": {
+    "length_km": 0.5,
+    "r_ohm_per_km": 0.2,
+    "x_ohm_per_km": 0.1,
+    "c_nf_per_km": 0,
+    "max_i_ka": 0.2
+  },
+  "generator_candidate": {
+    "mva": 3.125,
+    "rated_pf": 0.8
+  }
+}
