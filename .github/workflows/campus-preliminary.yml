@@ -1,0 +1,28 @@
+name: MissionCriticalGrid preliminary load flow
+on:
+  pull_request:
+    paths:
+      - 'work-samples/mission-critical-grid/**'
+      - '.github/workflows/campus-preliminary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  balanced:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pandapower==3.5.6
+      - run: python -m pip freeze > campus-environment.txt
+      - run: python -m unittest discover -s work-samples/mission-critical-grid -v
+      - run: python work-samples/mission-critical-grid/run_balanced.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: campus-preliminary
+          path: |
+            campus-preliminary-results.json
+            campus-environment.txt
