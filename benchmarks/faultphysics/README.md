@@ -1,6 +1,6 @@
 # FaultPhysics / RelayPhysics — qualification protocol
 
-Status: analytical reference prepared; CI execution pending. Study cases are not the campus design. All inputs synthetic.
+Status: 11 analytical unit tests and five native fault comparisons passed in CI. See [native evidence](NATIVE_EVIDENCE.md). Study cases are not the campus design. All inputs synthetic.
 
 ## Fault benchmark
 20 kV, 50 Hz, source strengths 500/250 MVA, R/X=0.1, voltage factor 1.1/1.0. One 1 km series line with positive/negative Z=0.5+j1.2 ohm, zero sequence Z=1.5+j3.6 ohm, no shunt, conductor end temperature 20 C. Source X0/X1=2, R0/X0=0.2. No loads, machines or transformers. Bolted faults. Independent phase/sequence conversion and boundary-condition tests. Maximum 3ph, 2ph and 1ph, minimum 3ph and 2ph; minimum 1ph not yet qualified. Native tolerance fixed at 2% relative or 1e-6 kA absolute. Source impedance conventions from [pandapower 3.5.6](https://pandapower.readthedocs.io/en/v3.5.6/elements/ext_grid.html) and [calc_sc](https://pandapower.readthedocs.io/en/v3.5.6/shortcircuit/run.html).
