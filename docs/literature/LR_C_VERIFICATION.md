@@ -1,0 +1,34 @@
+# LR-C — Computational verification and benchmark design
+
+## 1. Evidence hierarchy and independence
+Analytical verification tests equations and implementation on a known solution; independent numerical comparison tests equivalent problem formulations using distinct implementations; regression establishes consistent behaviour relative to a native/previous case; physical validation compares model to measurements with uncertainty. These categories cannot substitute for one another. R01/R02 show related code lineage for historical power-flow algorithms; a MATPOWER vs pandapower match may not be wholly independent. Use separately derived Ybus and Newton solver plus hand cases, and independent re-entry in PowerFactory if access and publication rights permit. CIGRE native test remains regression [R04].
+
+The reviewed repository states two-bus AC/three-phase max-min, CIGRE native, fault and generic relay benchmark CI passes; campus preliminary load flow and 41 contingency capacity screen are recorded. They qualify those cases, not all equipment configurations or personal competence. Store input/version/hash/solver flags, results, pass tolerances and all failures. Freeze dependency lock after successful reproduction. Keep historical versions and outputs; do not overwrite evidence to fit updated standards.
+
+## 2. Edition alignment
+IEC 60909-0:2026 ed.3 was published 23 July 2026 [R05]. The pinned pandapower 3.5.6 documentation cites IEC 60909-0:2016 [R07]. We have not inspected full standards or a clause-level revision comparison. Retain results under the documented implementation, avoid claims of 2026 compliance, and acquire lawful access to both editions plus relevant national adoption before moving from verification to a code-aligned study. Record source correction, transformer correction, voltage factor, fault definition, topology, pre-fault method, conductor temperature, motor/converter modelling and peak method for each comparison. R07 restricts near-generator peak/thermal current output; do not repurpose it for those duties. Breaking current must be separately supported by qualified method.
+
+## 3. CT158 — independent historical benchmark candidate
+Source R08, printed pp.27–30, §3.5, figures 30–35 (PDF indices 28–31). The exercise has a 60 kV source feeding a 30 kV network through two transformers and a line GH that changes topology. The sequence diagrams model the fault at H; they explicitly remove zero-sequence paths blocked by delta connections. The problem assumes negligible resistance. Source's solution also includes positive-sequence shunt branches representing downstream circuits. Do not silently discard those branches or map them to normal constant-PQ loads; reproduce the diagram as printed, then study modelling differences separately.
+
+Critical discrepancy: the problem statement on p.27 specifies voltage factor c=1, but p.28 explicitly applies c=1.1 for the HV network. The printed currents correspond to approximately c=1.1. Preserve both as named cases; the replication case uses the solution convention and the alternate case uses the problem convention. Do not silently alter the source, and do not call the benchmark a modern IEC 60909 compliance case.
+
+| Topology | Published Z1=Z2 (reactance, ohm) | Published Z0 (reactance, ohm) | Published 3ph (kA) | Published 1ph (kA) |
+|---|---:|---:|---:|---:|
+| GH open | 17.25 | 39.45 | 1.104 | 0.773 |
+| GH closed | 13.05 | 27.2 | 1.460 | 1.072 |
+
+Independent arithmetic from the printed rounded equivalents (30 kV, c=1.1): I3=c*30/(sqrt(3)*X1), I1=c*30*sqrt(3)/(2*X1+X0). Using c=1 instead scales those values by 1/1.1. This is an equation/target check only; no topology reconstruction executed in LR0. The original figures are not copied.
+
+Proposed next benchmark: assemble the positive/negative and zero sequence admittance matrices independently, inject 1 A at H and calculate Thevenin impedance for both topology states; compare to source rounded equivalents. Use predeclared <=1% relative impedance/current tolerance to accommodate printed rounding, with explicit error from equivalent-impedance rounding; compare open vs closed topology and both voltage factors. A separate pandapower reproduction is conditional on representing the legacy model and aligning settings; do not tune inputs to force agreement. Verify zero-sequence graph and transformer connection conventions separately. If the historical guide's assumptions differ from modern solver method, record as model-form difference, not a software defect. No CT158 pass until reconstruction and review.
+
+## 4. Fault and relay qualification extensions
+The existing synthetic benchmark compares 3ph/2ph max/min and max 1ph. Add min 1ph with independently fixed sequence data, conductor temperature and fault impedance. Add a separately constructed transformer/grounding benchmark for delta isolation and grounded star connection. Test branch current extraction, peak factor and thermal duty for a far-from-generator reference, and a supported generator initial current check. Record unsupported double-line-to-ground native cases as a capability gap rather than assigning outputs.
+
+Relay integration: the constant-current and ideal generic envelope are mathematical tests. Define measured RMS current window, pickup/dropout, reset law, time integration, saturation, tolerances, CT and breaker delays, then compare to manufacturer relay curves and appropriate time-varying test data. The STAMFORD curve is a source for a bounded waveform input but not validation of a vendor relay; avoid extrapolation beyond plotted duration or applying an alternator curve to unrelated gensets. Test no-trip cases and explicit minimum current sensitivity.
+
+## 5. Dynamic and EMT verification
+R17 suggests benchmark dynamic datasets and DAE solution comparison. Begin with equilibrium and analytical swing response, then match machine/AVR/governor models and initial conditions in ANDES and PowerFactory. For EMT use R18 as a reference lead plus independently derived R-L fault transient. Qualify peak current, sampling, integration step, point-on-wave, saturation and residual flux. R19 constrains free-edition size; keep reduced experiments distinct from the campus. No native PSCAD or PowerFactory study claimed here. Any commercial results remain private without clear publication rights.
+
+## 6. Physical validation plan
+No physical validation is currently available. For approved isolated current-limited extra-low-voltage experiments, document instrument calibration, uncertainty, sampling, boundary conditions, repeatability, model discrepancy and safety approval. A bench RLC model can validate that small circuit, not the full campus. Keep calibration data separate from validation data where possible. The broader research requires experimental or field evidence and peer-reviewed papers that report validation, not just cross-code matches.
