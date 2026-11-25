@@ -1,0 +1,19 @@
+# Evidence register
+
+| Claim | Evidence | Status |
+|---|---|---|
+| Preliminary nameplate arithmetic | screening.py, PRELIMINARY_SCREEN.md | local analytical checks passed; review pending |
+| Network solver qualification | W0 | not started |
+| Equipment selection | W1 | not qualified |
+| Solved AC load flow | W2 | not available |
+| Contingencies | W3 | not available |
+| IEC 60909 faults | W4 | not available |
+| Selectivity and protection | W5 | not available |
+| Resilience | W6 | not available |
+| Design alternatives | W7 | not available |
+| PowerFactory cross-check | W8 | not available; licence pending |
+| PSCAD native studies | W9 | not available in this project |
+| Dynamics and thermal continuity | W10 | not available |
+| Consolidated report | W11 | not available |
+
+This folder is the work-sample entry point, not evidence of completed studies. Release a reviewed, immutable version only when the gate requirements are met. Record commits, input hashes, solver settings, reviewer and AI assistance. Keep commercial materials private unless permitted.
