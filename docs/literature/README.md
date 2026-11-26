@@ -2,6 +2,7 @@
 
 Status: first targeted evidence synthesis, 26 November 2026. Not an exhaustive systematic review or an engineering design approval. No simulation code changed. LR0 is an explicit prerequisite for expanding campus W4/W5.
 
+- [Uploaded-source audit: seven PDFs, 128 pages and PSCAD archive](audit/README.md)
 - [Review protocol](REVIEW_PROTOCOL.md)
 - [LR-A: Power systems foundations and advanced methods](LR_A_POWER_SYSTEMS.md)
 - [LR-B: MissionCriticalGrid industrial design](LR_B_MISSION_CRITICAL_GRID.md)
