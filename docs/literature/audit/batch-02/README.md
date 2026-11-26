@@ -29,3 +29,6 @@
 
 ## Outstanding
 Full page review for remaining 1229 pages, detailed OEM curves/footnotes and exact device ratings, current IEC texts, matching generator/UPS data, physical validation, formal review and CI. LR0 open. No campus assumptions or model code changed. PR #4 was not mergeable before this update; no merge attempted.
+
+## Visual screening continuation
+See [visual screening report](VISUAL_SCREENING_20261126.md) and [page coverage](visual_coverage.csv). Cumulative coverage 178/1253; earlier targeted counts are historical and superseded for current coverage. LR0 remains open.
