@@ -1,6 +1,6 @@
 # LR0 Batch II — initial targeted audit
 
-10 PDFs, 1257 pages, all opened and text extraction attempted; four pages with no extractable text. 24 selected pages rendered and visually inspected. Other pages are indexed, not claimed visually reviewed. No full handbook audit or systematic literature review closure. Source PDFs, screenshots and full extracted text are not redistributed. AI-assisted review, maintainer review pending.
+10 PDFs, 1253 pages, all opened and text extraction attempted; four pages with no extractable text. 24 selected pages rendered and visually inspected. Other pages are indexed, not claimed visually reviewed. No full handbook audit or systematic literature review closure. Source PDFs, screenshots and full extracted text are not redistributed. AI-assisted review, maintainer review pending.
 
 | ID | Source | PDF pages | Visually inspected pages | SHA-256 |
 |---|---|---:|---|---|
@@ -28,4 +28,4 @@
 - B10 pp.29–32 (printed 27–30): voltage factor 1.0 in problem, 1.1 in solution. Independent exploratory nodal reconstruction of printed simplified sequence networks matches all eight impedance/current values within predeclared 1% tolerance; see CT158 note and script. No native solver or formal closure.
 
 ## Outstanding
-Full page review for remaining 1233 pages, detailed OEM curves/footnotes and exact device ratings, current IEC texts, matching generator/UPS data, physical validation, formal review and CI. LR0 open. No campus assumptions or model code changed. PR #4 was not mergeable before this update; no merge attempted.
+Full page review for remaining 1229 pages, detailed OEM curves/footnotes and exact device ratings, current IEC texts, matching generator/UPS data, physical validation, formal review and CI. LR0 open. No campus assumptions or model code changed. PR #4 was not mergeable before this update; no merge attempted.
