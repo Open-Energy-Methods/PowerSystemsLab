@@ -32,3 +32,6 @@ Full page review for remaining 1229 pages, detailed OEM curves/footnotes and exa
 
 ## Visual screening continuation
 See [visual screening report](VISUAL_SCREENING_20261126.md) and [page coverage](visual_coverage.csv). Cumulative coverage 178/1253; earlier targeted counts are historical and superseded for current coverage. LR0 remains open.
+
+## Complete handbook visual screening
+[Handbook visual audit](HANDBOOK_VISUAL_AUDIT.md) supersedes earlier incomplete page coverage. All 1253 Batch II pages visually screened; see updated [coverage](visual_coverage.csv). Numerical detail and LR0 closure remain open.
